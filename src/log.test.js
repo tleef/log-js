@@ -81,7 +81,7 @@ describe('log', () => {
       })
 
       it('should throw if instantiated without new', () => {
-        expect(() => Logger()).to.throw('Class constructor Logger cannot be invoked without \'new\'')
+        expect(() => Logger()).to.throw('Cannot call a class as a function')
       })
 
       it('should throw if parent is not a Logger', () => {
