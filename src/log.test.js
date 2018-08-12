@@ -200,9 +200,22 @@ describe('log', () => {
         new Logger()._log('test', {one: 1}, 1000)
 
         expect(console.log).to.have.been.calledWith(JSON.stringify({
+          one: 1,
           level: 1000,
-          message: 'test',
-          one: 1
+          message: 'test'
+        }))
+      })
+
+      it('should log with meta', () => {
+        let l = new Logger().withMeta({one: 1})
+
+        l._log('test', {two: 2}, 1000)
+
+        expect(console.log).to.have.been.calledWith(JSON.stringify({
+          one: 1,
+          two: 2,
+          level: 1000,
+          message: 'test'
         }))
       })
 

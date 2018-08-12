@@ -90,10 +90,10 @@ class Logger {
       return
     }
 
-    const data = Object.assign({
+    const data = Object.assign({}, this.meta, meta, {
       level,
       message
-    }, meta)
+    })
 
     console.log(JSON.stringify(data))
   }
