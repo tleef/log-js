@@ -6,8 +6,8 @@ interface ILogFn {
   debug: LogLevelFn;
   trace: LogLevelFn;
 }
-type LogFn = ILogFn & ((message: string, meta?: IMeta, level?: number) => void);
-type LogLevelFn = (message: string, meta?: IMeta) => void;
+export type LogFn = ILogFn & ((message: string, meta?: IMeta, level?: number) => void);
+export type LogLevelFn = (message: string, meta?: IMeta) => void;
 
 const ERROR = 500;
 const WARN = 400;
